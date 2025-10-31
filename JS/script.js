@@ -44,14 +44,14 @@ function createProjectile(xChose, negative) {
 
     // start randomly at chosen edge
     if (xChose) {
-        proj.y = Math.random() * (window.innerWidth - 30);
+        proj.y = Math.random() * (window.innerWidth);
         proj.x = startx;
     }
     else if (!xChose) {
-        proj.x = Math.random() * (window.innerWidth - 30);
+        proj.x = Math.random() * (window.innerWidth);
         proj.y = starty;
     }
-    proj.speed = 3 + Math.random() * 3; // random fall speed
+    proj.speed = 1 + Math.random() * 5; // random fall speed
     proj.style.left = proj.x + "px";
     proj.style.top = proj.y + "px";
     projectiles.push(proj);
@@ -129,10 +129,10 @@ function gameLoop() { // this is the game loop! where we check everything
 // Spawn projectiles every second or 1000ms
 //setInterval(createProjectile(true, true), 500); these dont work for some reason
 //setInterval(createProjectile(true, false), 500);
-setInterval(function() { createProjectile(true, true); }, 500);
-setInterval(function() { createProjectile(true, false); }, 500);
-setInterval(function() { createProjectile(false, true); }, 500);
-setInterval(function() { createProjectile(false, false); }, 500);
+setInterval(function() { createProjectile(true, true); }, 333);
+setInterval(function() { createProjectile(true, false); }, 333);
+setInterval(function() { createProjectile(false, true); }, 333);
+setInterval(function() { createProjectile(false, false); }, 333);
 
 
 gameLoop(); // start the loop
